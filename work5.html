@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+body{
+	background-color: #000000;
+}
+.container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  perspective: 500px;
+  margin: auto;
+  margin-top: 200px;
+}
+
+#cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+ 
+}
+
+#cube:hover{
+	animation: play 6s linear infinite;
+	transition-timing-function: ease;
+	-moz-transition-timing-function: ease; /* Firefox 4 */
+	-webkit-transition-timing-function: ease; /* Safari 和 Chrome */
+	-o-transition-timing-function: ease; /* Opera */
+}
+
+#cube div {
+  width: 196px;
+  height: 196px;
+  display: block;
+  position: absolute;
+  border: 2px solid #2a8ce4;
+  background-color: rgba(42,140,228,0.4);
+}                                                  
+#cube .front  { transform: rotateY(   0deg ) translateZ( 100px ); }
+#cube .back   { transform: rotateX( 180deg ) translateZ( 100px ); }
+#cube .right  { transform: rotateY(  90deg ) translateZ( 100px ); }
+#cube .left   { transform: rotateY( -90deg ) translateZ( 100px ); }
+#cube .top    { transform: rotateX(  90deg ) translateZ( 100px ); }
+#cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }  
+   
+@keyframes play{
+ from{transform:rotateY(360deg) /*rotateZ(360deg)*/;}
+ to{transform:rotateY(0deg)  /*rotateZ(360deg)*/;}
+}            
+</style>
+</head>
+<body>
+<div class="container">
+  <div id="cube">
+    <div class="front"></div>
+    <div class="back"></div>
+	<div class="right"></div>
+    <div class="left"></div>
+    <div class="top"></div>
+    <div class="bottom"></div>
+  </div>
+</div>                          
+  
+</div>
+</div>
+</body>
+</html>
