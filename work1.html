@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				height: 100px;
+				margin: auto;
+				text-align: center;
+			}
+			.box::after{
+				content: '';
+				width: 0px;
+				height: 4px;
+				background-color: #4568e8;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 35px;
+				transition: width 0.8s;
+				-moz-transition: width 0.8s;
+				-webkit-transition: width 0.8s;
+				-o-transition: width 0.8s;
+			}
+			.box .btn{
+				position: relative;
+				top: 20px;
+				padding: 5px 10px;
+				border-radius: 5px;
+				border: 1px solid #ccc;
+				cursor: default;
+				color: black;
+				width: 100px;
+				margin: auto;
+			}
+			.active::after{
+				width: 100px;
+			}
+			.active{
+				color: #4568e8;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var box = document.getElementsByClassName('box');
+			function change(){
+				var boxClassList = box[0].classList;
+				if(boxClassList.value.indexOf('active')!=-1){
+						box[0].classList.remove('active');
+				}else{
+					    box[0].classList.add('active');
+					}
+		
+			}
+	
+		</script>
+		<div class="box">
+			<div class="text" id="text">前端学院</div>
+			<div class="btn" onclick="change()">切换样式</div>
+		</div>
+	</body>
+</html>
